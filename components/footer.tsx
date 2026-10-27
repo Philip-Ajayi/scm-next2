@@ -3,11 +3,11 @@ import { ArrowUpRight } from "lucide-react";
 import { FaInstagram, FaYoutube } from "react-icons/fa6";
 
 const links = [
-  ["About", "#experience"],
-  ["Schedule", "#schedule"],
-  ["Register", "#register"],
-  ["Give", "#give"],
-  ["Contact Us", "#contact"]
+  ["About", "/about"],
+  ["Schedule", "/schedule"],
+  ["Register", "/register"],
+  ["Give", "/give"],
+  ["Contact Us", "/contact"]
 ];
 
 export function Footer() {

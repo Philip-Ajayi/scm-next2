@@ -5,11 +5,10 @@ import Link from "next/link";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const links = [
-  ["Experience", "#experience"],
-  ["Schedule", "#schedule"],
-  ["Ministers", "#ministers"],
-  ["Gallery", "#gallery"],
-  ["Resources", "#resources"]
+  ["About", "/experience"],
+  ["Contact", "/contact"],
+  ["Schedule", "/schedule"],
+  ["Give", "/give"],
 ];
 
 export function Navbar() {
@@ -69,7 +68,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-2">
             <Link
-              href="#register"
+              href="/register"
               className={`group hidden items-center gap-2 rounded-full px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] transition-all duration-500 sm:flex ${
                 scrolled
                   ? "bg-[#101014] text-white hover:bg-[#29292e]"
@@ -125,7 +124,7 @@ export function Navbar() {
             ))}
 
             <Link
-              href="#register"
+              href="/register"
               onClick={() => setOpen(false)}
               className="mt-6 inline-flex w-fit rounded-full bg-[#101014] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-white"
             >
