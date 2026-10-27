@@ -1,41 +1,47 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Geist, Geist_Mono } from "next/font/google";
+import { Manrope, DM_Mono, Instrument_Serif } from "next/font/google";
 
 import "./globals.css";
-import { SiteShell } from "@/components/site-shell";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
   subsets: ["latin"],
+  variable: "--font-instrument",
   weight: "400",
   display: "swap"
 });
 
-const geist = Geist({
-  variable: "--font-geist",
+const manrope = Manrope({
   subsets: ["latin"],
+  variable: "--font-manrope",
   display: "swap"
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmMono = DM_Mono({
   subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
   display: "swap"
 });
 
 export const metadata: Metadata = {
-  title: "Supernatural Community Church — Camp Meeting 2026",
+  title: "Supernatural Community Church | Supernatural Camp Meeting 2026",
   description:
-    "Supernatural Camp Meeting 2026. Come expecting. Leave transformed.",
+    "Come expecting the Word, the Spirit, and an encounter that leaves you transformed.",
   keywords: [
     "Supernatural Community Church",
     "Supernatural Camp Meeting",
     "Rochester church",
-    "Christian conference",
-    "Camp Meeting 2026"
+    "Christian church",
+    "Holy Spirit",
+    "Word of God"
   ],
-  icons: {
-    icon: "/main/Logooo.png"
+  openGraph: {
+    title: "Supernatural Camp Meeting 2026",
+    description:
+      "The Word. The Spirit. The Encounter.",
+    images: ["/main/hero.jpeg"]
   }
 };
 
@@ -45,11 +51,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${instrumentSerif.variable} ${geist.variable} ${geistMono.variable}`}
-      >
-        <SiteShell>{children}</SiteShell>
+    <html
+      lang="en"
+      className={`${instrumentSerif.variable} ${manrope.variable} ${dmMono.variable}`}
+    >
+      <body>
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

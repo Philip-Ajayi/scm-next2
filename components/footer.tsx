@@ -1,106 +1,99 @@
-"use client";
-
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "motion/react";
+import { FaInstagram, FaYoutube } from "react-icons/fa6";
 
-const footerLinks = [
-  ["About", "#about"],
-  ["Schedule", "#event"],
+const links = [
+  ["About", "#experience"],
+  ["Schedule", "#schedule"],
   ["Register", "#register"],
   ["Give", "#give"],
-  ["Contact", "#contact"]
+  ["Contact Us", "#contact"]
 ];
 
 export function Footer() {
   return (
-    <footer
-      id="contact"
-      className="relative overflow-hidden bg-[#090909] px-5 pb-8 pt-24 text-white md:px-10 md:pt-36"
-    >
-      <div className="absolute left-1/2 top-0 h-[30vw] w-[30vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/10 blur-[120px]" />
+    <footer className="relative overflow-hidden bg-[#f7f7f5] px-5 pb-7 pt-24 sm:px-8 lg:px-14 lg:pt-32">
+      <div className="absolute right-[-10rem] top-[-12rem] h-[35rem] w-[35rem] rounded-full bg-violet-400/10 blur-[100px]" />
 
-      <div className="relative mx-auto max-w-[1600px]">
-        <div className="grid gap-16 lg:grid-cols-[1.5fr_1fr]">
+      <div className="relative mx-auto max-w-[1500px]">
+        <div className="grid gap-16 lg:grid-cols-[1.4fr_.6fr_.6fr]">
           <div>
-            <p className="eyebrow mb-8 text-white/40">
-              Supernatural Community Church
-            </p>
+            <img
+              src="/main/Logoo.png"
+              alt="Supernatural Community Church"
+              className="h-20 w-auto object-contain object-left"
+            />
 
-            <h2 className="font-display text-[clamp(4rem,10vw,10rem)] leading-[0.75] tracking-[-0.055em]">
-              COME
+            <h2 className="mt-10 max-w-3xl font-display text-[clamp(3.8rem,8vw,9rem)] leading-[0.76] tracking-[-0.06em]">
+              The Word.
               <br />
-              EXPECTING.
+              The Spirit.
+              <br />
+              <i>The encounter.</i>
             </h2>
           </div>
 
-          <div className="grid gap-12 sm:grid-cols-2">
-            <div>
-              <p className="eyebrow mb-5 text-white/40">Visit</p>
-
-              <address className="not-italic text-sm leading-7 text-white/70">
-                1400 Lehigh Station Road
-                <br />
-                Rochester, NY 14467
-                <br />
-                <br />
-                <a
-                  href="tel:+15852105038"
-                  className="transition hover:text-white"
-                >
-                  585 210 5038
-                </a>
-                <br />
-                <a
-                  href="mailto:info@supernaturalcc.org"
-                  className="transition hover:text-white"
-                >
-                  info@supernaturalcc.org
-                </a>
-              </address>
+          <div>
+            <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/35">
+              Explore
             </div>
 
-            <div>
-              <p className="eyebrow mb-5 text-white/40">Explore</p>
+            <nav className="mt-7 flex flex-col gap-3">
+              {links.map(([label, href]) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="group flex w-fit items-center gap-2 text-sm transition-opacity hover:opacity-50"
+                >
+                  {label}
+                  <ArrowUpRight
+                    size={12}
+                    className="opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
+                  />
+                </Link>
+              ))}
+            </nav>
+          </div>
 
-              <nav className="flex flex-col items-start gap-3">
-                {footerLinks.map(([label, href]) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    className="group flex items-center gap-2 text-sm text-white/70 transition hover:text-white"
-                  >
-                    {label}
+          <div>
+            <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/35">
+              Visit
+            </div>
 
-                    <ArrowUpRight className="h-3 w-3 -translate-x-1 translate-y-1 opacity-0 transition group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
-                  </Link>
-                ))}
-              </nav>
+            <div className="mt-7 text-sm leading-7 text-black/55">
+              1400 Lehigh Station Road
+              <br />
+              Rochester, NY 14467
+              <br />
+              <br />
+              585 210 5038
+              <br />
+              info@supernaturalcc.org
+            </div>
+
+            <div className="mt-7 flex gap-2">
+              <a
+                href="#instagram"
+                aria-label="Instagram"
+                className="grid h-10 w-10 place-items-center rounded-full border border-black/10 bg-white"
+              >
+                <FaInstagram size={15} />
+              </a>
+
+              <a
+                href="#youtube"
+                aria-label="YouTube"
+                className="grid h-10 w-10 place-items-center rounded-full border border-black/10 bg-white"
+              >
+                <FaYoutube size={15} />
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-24 border-t border-white/10 pt-8 md:mt-40">
-          <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <Image
-                src="/main/Logoo.png"
-                alt="Supernatural Community Church"
-                width={180}
-                height={80}
-                className="w-[130px] brightness-0 invert"
-              />
-            </motion.div>
-
-            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/30">
-              © 2026 Supernatural Community Church. All rights reserved.
-            </p>
-          </div>
+        <div className="mt-24 flex flex-col justify-between gap-4 border-t border-black/10 pt-6 font-mono text-[9px] uppercase tracking-[0.16em] text-black/35 sm:flex-row">
+          <span>© 2026 Supernatural Community Church.</span>
+          <span>All rights reserved.</span>
         </div>
       </div>
     </footer>

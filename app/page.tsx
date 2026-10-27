@@ -1,39 +1,30 @@
-import { Hero } from "@/components/hero/hero";
-import { EditorialStatement } from "@/components/experience/editorial-statement";
-import { WhatToExpect } from "@/components/experience/what-to-expect";
-import { WordSection } from "@/components/word/word-section";
-import { SpiritSection } from "@/components/spirit/spirit-section";
-import { MinistersSection } from "@/components/ministers/ministers-section";
-import { GallerySection } from "@/components/gallery/gallery-section";
-import { EventInformation } from "@/components/event/event-information";
-import { RegisterSection } from "@/components/registration/register-section";
-import { ResourcesSection } from "@/components/resources/resources-section";
-import { FinalStatement } from "@/components/experience/final-statement";
+import { Hero } from "@/components/hero";
+import { Expectations } from "@/components/expectations";
+import { Story } from "@/components/story";
+import { Transformation } from "@/components/transformation";
+import { Ministers } from "@/components/ministers";
+import { Gallery } from "@/components/gallery";
+import { Resources } from "@/components/resources";
+import { RegisterCTA } from "@/components/register-cta";
 
 export default function HomePage() {
   return (
-    <main className="page-shell">
+    <>
       <Hero />
 
-      <EditorialStatement />
+      <Expectations />
 
-      <WhatToExpect />
+      <Story />
 
-      <WordSection />
+      <Transformation />
 
-      <SpiritSection />
+      <Ministers />
 
-      <MinistersSection />
+      <Gallery />
 
-      <GallerySection />
+      <Resources />
 
-      <EventInformation />
-
-      <RegisterSection />
-
-      <ResourcesSection />
-
-      <FinalStatement />
-    </main>
+      <RegisterCTA />
+    </>
   );
 }
