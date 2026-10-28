@@ -113,7 +113,7 @@ export async function POST(req: Request) {
                     </div>
                     <div class="detail-row">
                       <span class="detail-label">Registration ID</span>
-                      <span class="detail-val" style="font-family: monospace;">${newRegistration._id}</span>
+                      <span class="detail-val" style="font-family: monospace;">N/A</span>
                     </div>
                   </div>
 
