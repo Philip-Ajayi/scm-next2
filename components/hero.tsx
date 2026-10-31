@@ -81,11 +81,11 @@ export function Hero() {
                 <Countdown />
 
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <GlassButton href="#register" dark>
+                  <GlassButton href="/register" dark>
                     Register Now
                   </GlassButton>
 
-                  <GlassButton href="#schedule">
+                  <GlassButton href="/schedule">
                     See Schedule
                   </GlassButton>
                 </div>
